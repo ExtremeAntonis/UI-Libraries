@@ -155,7 +155,7 @@ local SolarisLib = {
         Theme = "Default",
         ShowFriendsOnLaunch = true,
         ShowMusicOnLaunch = false,
-        CloseBind = "RightShift"
+        CloseBind = "RightControl"
     },
     Flags = {},
     CurrentTab
@@ -280,7 +280,7 @@ function SolarisLib:New(Config)
 
         MakeDraggable(MusicFrame.Frame.TopBar,MusicFrame)
         MusicFrame.Frame.TopBar.CloseBtn.MouseButton1Click:Connect(function()
-            MusicFrame:Destroy()
+            MusicFrame.Visible == false
         end)
         MusicFrame.Frame.TopBar.CloseBtn.MouseEnter:Connect(function() TweenService:Create(MusicFrame.Frame.TopBar.CloseBtn.Ico,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{ImageTransparency = 0}):Play() end)
         MusicFrame.Frame.TopBar.CloseBtn.MouseLeave:Connect(function() TweenService:Create(MusicFrame.Frame.TopBar.CloseBtn.Ico,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{ImageTransparency = 0.4}):Play() end)
@@ -616,7 +616,7 @@ function SolarisLib:New(Config)
         
         local general = Settings:Tab("General")
         general:ToggleSetting("Show Music On Launch", "Shows the music menu when you load Snow Hub", true, "ShowMusicOnLaunch")
-        general:BindSetting("Close Bind", "Hides/Shows the main window when pressed.", Enum.KeyCode.RightShift, "CloseBind")
+        general:BindSetting("Close Bind", "Hides/Shows the main window when pressed.", Enum.KeyCode.RightControl, "CloseBind")
         
         local appearance = Settings:Tab("Appearance")
         appearance:Dropdown("Theme", "The look of the user interface", {"Default", "Discord", "Red", "Green", "Blue"}, "Default", "Theme")
