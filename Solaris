@@ -155,7 +155,7 @@ local SolarisLib = {
         Theme = "Default",
         ShowFriendsOnLaunch = true,
         ShowMusicOnLaunch = false,
-        CloseBind = "RightControl"
+        CloseBind = "RightShift"
     },
     Flags = {},
     CurrentTab
@@ -280,7 +280,7 @@ function SolarisLib:New(Config)
 
         MakeDraggable(MusicFrame.Frame.TopBar,MusicFrame)
         MusicFrame.Frame.TopBar.CloseBtn.MouseButton1Click:Connect(function()
-            MusicFrame.Visible = false
+            MusicFrame:Destroy()
         end)
         MusicFrame.Frame.TopBar.CloseBtn.MouseEnter:Connect(function() TweenService:Create(MusicFrame.Frame.TopBar.CloseBtn.Ico,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{ImageTransparency = 0}):Play() end)
         MusicFrame.Frame.TopBar.CloseBtn.MouseLeave:Connect(function() TweenService:Create(MusicFrame.Frame.TopBar.CloseBtn.Ico,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{ImageTransparency = 0.4}):Play() end)
