@@ -3435,6 +3435,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			local Slider = Elements.Template.Slider:Clone()
 			Slider.Name = SliderSettings.Name or SliderSettings.Title
 			Slider.Title.Text = SliderSettings.Name or SliderSettings.Title
+			Slider.ClipsDescendants = true
 			Slider.Visible = true
 			Tab.Elements[SliderSettings.Name or SliderSettings.Name] = {
 				type = 'slider',
