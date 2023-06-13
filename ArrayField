@@ -1,5 +1,7 @@
 --[[
 
+YO
+
 ArrayField Interface Suite
 by Arrays
 
@@ -3457,6 +3459,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			end
 
 			Slider.Main.BackgroundColor3 = SelectedTheme.SliderBackground
+			Slider.Main.ClipsDescendants = true
 			Slider.Main.UIStroke.Color = SelectedTheme.SliderStroke
 			Slider.Main.Progress.BackgroundColor3 = SelectedTheme.SliderProgress
 
